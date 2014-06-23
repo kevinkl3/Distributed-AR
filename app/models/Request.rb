@@ -1,7 +1,7 @@
-class Post < ActiveRecord::Base
+class Request < ActiveRecord::Base
 	include DRb::DRbUndumped
 	
-	self.table_name = 'POST'
+	self.table_name = 'REQUEST'
 
 	def guardar
 		self.save()

@@ -1,7 +1,7 @@
-class Post < ActiveRecord::Base
+class Image < ActiveRecord::Base
 	include DRb::DRbUndumped
 	
-	self.table_name = 'POST'
+	self.table_name = 'IMAGE'
 
 	def guardar
 		self.save()

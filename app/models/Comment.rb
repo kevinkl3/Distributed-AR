@@ -1,7 +1,7 @@
-class Post < ActiveRecord::Base
+class Comment < ActiveRecord::Base
 	include DRb::DRbUndumped
 	
-	self.table_name = 'POST'
+	self.table_name = 'COMMENT'
 
 	def guardar
 		self.save()
