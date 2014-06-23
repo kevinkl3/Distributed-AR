@@ -2,8 +2,12 @@ require 'drb/drb'
 
 # The URI to connect to
 #USER_URI="druby://198.199.114.228:8887"
+#Skels Ports
+# User: 8887
+# Post: 8888
 USER_URI="druby://localhost:8887"
 POST_URI="druby://localhost:8888"
+
 
 # Start a local DRbServer to handle callbacks.
 #
@@ -12,6 +16,12 @@ POST_URI="druby://localhost:8888"
 # to a dRuby call.
 DRb.start_service
 
-user = DRbObject.new_with_uri(USER_URI)
-post = DRbObject.new_with_uri(POST_URI)
-puts server.all
+
+#To setup all Skells
+Dir.glob('./client/*').each do |folder|
+  Dir.glob(folder +"/*.rb").each do |file|
+    require file
+    puts "done requiring " + file
+  end
+end
+
