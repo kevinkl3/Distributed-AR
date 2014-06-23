@@ -1,7 +1,7 @@
-class Post < ActiveRecord::Base
+class Message < ActiveRecord::Base
 	include DRb::DRbUndumped
 	
-	self.table_name = 'POST'
+	self.table_name = 'MESSAGE'
 
 	def guardar
 		self.save()
