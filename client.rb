@@ -1,7 +1,9 @@
 require 'drb/drb'
 
 # The URI to connect to
-SERVER_URI="druby://localhost:8887"
+#USER_URI="druby://198.199.114.228:8887"
+USER_URI="druby://localhost:8887"
+POST_URI="druby://localhost:8888"
 
 # Start a local DRbServer to handle callbacks.
 #
@@ -10,5 +12,6 @@ SERVER_URI="druby://localhost:8887"
 # to a dRuby call.
 DRb.start_service
 
-server = DRbObject.new_with_uri(SERVER_URI)
+user = DRbObject.new_with_uri(USER_URI)
+post = DRbObject.new_with_uri(POST_URI)
 puts server.all

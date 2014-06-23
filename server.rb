@@ -3,7 +3,8 @@ require 'active_record'
 gem 'mysql2'
 
 # The URI for the server to connect to
-MY_URI="druby://localhost:8887"
+USER_URI="druby://:8887"
+POST_URI="druby://:8888"
 
 
 Dir.glob('./app/*').each do |folder|
@@ -26,9 +27,9 @@ ActiveRecord::Base.establish_connection(
 
 # The object that handles requests on the server
 #FRONT_OBJECT=MyServer.new
-
 $SAFE = 1   # disable eval() and friends
 
-DRb.start_service(MY_URI, User)
+DRb.start_service(USER_URI, User)
+DRb.start_service(POST_URI, Post)
 # Wait for the drb server thread to finish before exiting.
 DRb.thread.join
