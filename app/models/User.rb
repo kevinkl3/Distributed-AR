@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-	#include DRb::DRbUndumped
-	establish_connection(:maindata)
+	include DRb::DRbUndumped
+	#establish_connection(:maindata)
 	self.table_name = 'USER'
 	has_many :posts
 	has_many :comments

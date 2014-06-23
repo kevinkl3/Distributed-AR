@@ -1,6 +1,6 @@
 class Comment < ActiveRecord::Base
-	#include DRb::DRbUndumped
-	establish_connection(:maindata)
+	include DRb::DRbUndumped
+	#establish_connection(:maindata)
 	self.table_name = 'COMMENT'
 	has_many :like_comments
 	belongs_to :user
