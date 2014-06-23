@@ -1,4 +1,4 @@
-class Like_Comment < ActiveRecord::Base
+class LikeComment < ActiveRecord::Base
 	include DRb::DRbUndumped
 	#establish_connection(:maindata)
 	self.table_name = 'LIKE_COMMENT'
